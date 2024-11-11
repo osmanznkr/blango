@@ -51,9 +51,10 @@ class Dev(Configuration):
         'django.contrib.sessions',
         'django.contrib.messages',
         'django.contrib.staticfiles',
+        'blango_auth',
         'blog',
         'crispy_forms',
-        'crispy_bootstrap5'
+        'crispy_bootstrap5' 
     ]
 
     MIDDLEWARE = [
@@ -103,9 +104,11 @@ class Dev(Configuration):
         "ALTERNATIVE_DATABASE_URL",
         default=f"sqlite:///{BASE_DIR}/alternative_db.sqlite3",
     ),
-}
+    }
 
     # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
+
+    AUTH_USER_MODEL = "blango_auth.User"
 
     AUTH_PASSWORD_VALIDATORS = [
         {
