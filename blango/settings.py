@@ -85,6 +85,7 @@ class Dev(Configuration):
         },
     ]
 
+
     WSGI_APPLICATION = 'blango.wsgi.application'
 
 
@@ -138,6 +139,10 @@ class Dev(Configuration):
     USE_L10N = True
 
     USE_TZ = True
+
+    EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+    ACCOUNT_ACTIVATION_DAYS = 7
+    REGISTRATION_OPEN = True
 
 
     # Static files (CSS, JavaScript, Images)
